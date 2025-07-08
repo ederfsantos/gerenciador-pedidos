@@ -11,6 +11,7 @@ public class Produto {
     private Long id;
     @Column(unique = true)
     private String nome;
+    @Column(name = "valor")
     private Double preco;
 
     public Produto() {
