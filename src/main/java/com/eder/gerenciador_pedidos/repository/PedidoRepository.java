@@ -3,5 +3,16 @@ package com.eder.gerenciador_pedidos.repository;
 import com.eder.gerenciador_pedidos.model.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PedidoRepository extends JpaRepository<Pedido,Long> {
+import java.time.LocalDate;
+import java.util.List;
+
+public interface PedidoRepository extends JpaRepository<Pedido, Long> {
+
+    List<Pedido> findByDataEntregaIsNull();
+
+    List<Pedido> findByDataPedidoAfter(LocalDate data);
+
+    List<Pedido> findByDataPedidoBefore(LocalDate data);
+    List<Pedido> findByDataPedidoBetween(LocalDate dataInicio,LocalDate dataFim);
+
 }

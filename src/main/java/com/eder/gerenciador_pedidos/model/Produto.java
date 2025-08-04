@@ -33,24 +33,28 @@ public class Produto {
         this.preco = preco;
     }
 
-    public Fornecedor getFornecedor() {
-        return fornecedor;
-    }
-
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public Double getPreco() {
         return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
     }
 
     public Categoria getCategoria() {
@@ -58,8 +62,15 @@ public class Produto {
     }
 
     public void setCategoria(Categoria categoria) {
-
         this.categoria = categoria;
+    }
+
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
     }
 
     @Override
@@ -69,6 +80,8 @@ public class Produto {
                ", nome='" + nome + '\'' +
                ", preco=" + preco +
                ", categoria=" + categoria +
+               ", fornecedor=" + fornecedor +
                '}';
     }
 }
+

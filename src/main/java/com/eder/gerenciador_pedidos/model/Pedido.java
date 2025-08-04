@@ -3,6 +3,7 @@ package com.eder.gerenciador_pedidos.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,10 +15,18 @@ public class Pedido {
     private Long id;
     @Temporal(TemporalType.DATE)
     private LocalDate data;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "pedido_produto", joinColumns = @JoinColumn(name = "pedido_id"),
             inverseJoinColumns = @JoinColumn(name = "produto_id"))
-    private List<Produto> produtos;
+    private List<Produto> produtos = new ArrayList<>();
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
 
     public Pedido() {
     }

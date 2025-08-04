@@ -18,6 +18,19 @@ public class Categoria {
 
     public Categoria() {
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
     public Categoria(String nome) {
         this.nome = nome;
     }
